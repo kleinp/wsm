@@ -1,0 +1,168 @@
+[1mdiff --git a/part_library.bak b/part_library.bak[m
+[1mindex b37b4a0..1fadb6c 100644[m
+[1m--- a/part_library.bak[m
+[1m+++ b/part_library.bak[m
+[36m@@ -135,6 +135,26 @@[m [mX GND PAD 850 -600 197 L 50 50 1 1 W[m
+ ENDDRAW[m
+ ENDDEF[m
+ #[m
+[32m+[m[32m# M24256-BR[m
+[32m+[m[32m#[m
+[32m+[m[32mDEF M24256-BR U 0 40 Y Y 1 F N[m
+[32m+[m[32mF0 "U" 100 350 60 H V C CNN[m
+[32m+[m[32mF1 "M24256-BR" 0 -550 60 H V C CNN[m
+[32m+[m[32mF2 "" 0 250 60 H I C CNN[m
+[32m+[m[32mF3 "" 0 0 60 H I C CNN[m
+[32m+[m[32mDRAW[m
+[32m+[m[32mS -250 300 250 -500 0 1 0 f[m
+[32m+[m[32mX E0 1 -350 -100 100 R 50 50 1 1 B[m
+[32m+[m[32mX E1 2 -350 -200 100 R 50 50 1 1 B[m
+[32m+[m[32mX E2 3 -350 -300 100 R 50 50 1 1 B[m
+[32m+[m[32mX GND 4 350 -400 100 L 50 50 1 1 B[m
+[32m+[m[32mX SDA 5 -350 200 100 R 50 50 1 1 B[m
+[32m+[m[32mX SCL 6 -350 100 100 R 50 50 1 1 B[m
+[32m+[m[32mX ~WC~ 7 -350 -400 100 R 50 50 1 1 B[m
+[32m+[m[32mX VCC 8 350 200 100 L 50 50 1 1 B[m
+[32m+[m[32mENDDRAW[m
+[32m+[m[32mENDDEF[m
+[32m+[m[32m#[m
+ # NCP302LSN30T1G[m
+ #[m
+ DEF NCP302LSN30T1G U 0 40 Y Y 1 F N[m
+[36m@@ -153,7 +173,7 @@[m [mENDDEF[m
+ #[m
+ # PAD[m
+ #[m
+[31m-DEF ~PAD J 0 40 Y Y 1 F N[m
+[32m+[m[32mDEF ~PAD J 0 40 N Y 1 F N[m
+ F0 "J" 100 0 60 H V C CNN[m
+ F1 "PAD" 0 -100 60 H I C CNN[m
+ F2 "part_footprints:SOLDER_PAD" 0 -100 60 H I C CNN[m
+[1mdiff --git a/part_library.lib b/part_library.lib[m
+[1mindex a48209e..8c4af03 100644[m
+[1m--- a/part_library.lib[m
+[1m+++ b/part_library.lib[m
+[36m@@ -135,6 +135,27 @@[m [mX GND PAD 850 -600 197 L 50 50 1 1 W[m
+ ENDDRAW[m
+ ENDDEF[m
+ #[m
+[32m+[m[32m# M24256-BR[m
+[32m+[m[32m#[m
+[32m+[m[32mDEF M24256-BR U 0 40 Y Y 1 F N[m
+[32m+[m[32mF0 "U" 100 350 60 H V C CNN[m
+[32m+[m[32mF1 "M24256-BR" 0 -550 60 H V C CNN[m
+[32m+[m[32mF2 "part_footprints:TSSOP-8_4.4x3mm_Pitch0.65mm" 0 -650 60 H I C CNN[m
+[32m+[m[32mF3 "" 0 0 60 H I C CNN[m
+[32m+[m[32mF4 "M24256-BRDW6TP" 0 -750 60 H I C CNN "PN"[m
+[32m+[m[32mDRAW[m
+[32m+[m[32mS -250 300 250 -500 0 1 0 f[m
+[32m+[m[32mX E0 1 -350 -100 100 R 50 50 1 1 B[m
+[32m+[m[32mX E1 2 -350 -200 100 R 50 50 1 1 B[m
+[32m+[m[32mX E2 3 -350 -300 100 R 50 50 1 1 B[m
+[32m+[m[32mX GND 4 350 -400 100 L 50 50 1 1 B[m
+[32m+[m[32mX SDA 5 -350 200 100 R 50 50 1 1 B[m
+[32m+[m[32mX SCL 6 -350 100 100 R 50 50 1 1 B[m
+[32m+[m[32mX ~WC~ 7 -350 -400 100 R 50 50 1 1 B[m
+[32m+[m[32mX VCC 8 350 200 100 L 50 50 1 1 B[m
+[32m+[m[32mENDDRAW[m
+[32m+[m[32mENDDEF[m
+[32m+[m[32m#[m
+ # NCP302LSN30T1G[m
+ #[m
+ DEF NCP302LSN30T1G U 0 40 Y Y 1 F N[m
+[1mdiff --git a/stm32cube_layout_lqft32.ioc b/stm32cube_layout_lqft32.ioc[m
+[1mindex ae3a921..9aa2721 100644[m
+[1m--- a/stm32cube_layout_lqft32.ioc[m
+[1m+++ b/stm32cube_layout_lqft32.ioc[m
+[36m@@ -12,40 +12,35 @@[m [mMcu.IP2=I2C1[m
+ Mcu.IP3=NVIC[m
+ Mcu.IP4=RCC[m
+ Mcu.IP5=RTC[m
+[31m-Mcu.IP6=SPI1[m
+[31m-Mcu.IP7=SYS[m
+[31m-Mcu.IP8=USART1[m
+[31m-Mcu.IP9=USART2[m
+[31m-Mcu.IPNb=10[m
+[32m+[m[32mMcu.IP6=SYS[m
+[32m+[m[32mMcu.IP7=USART1[m
+[32m+[m[32mMcu.IP8=USART2[m
+[32m+[m[32mMcu.IPNb=9[m
+ Mcu.Name=STM32L051K(6-8)Tx[m
+ Mcu.Package=LQFP32[m
+ Mcu.Pin0=PA0[m
+ Mcu.Pin1=PA1[m
+[31m-Mcu.Pin10=PA8[m
+[31m-Mcu.Pin11=PA9[m
+[31m-Mcu.Pin12=PA10[m
+[31m-Mcu.Pin13=PA12[m
+[31m-Mcu.Pin14=PA14[m
+[31m-Mcu.Pin15=PA15[m
+[31m-Mcu.Pin16=PB3[m
+[31m-Mcu.Pin17=PB4[m
+[31m-Mcu.Pin18=PB5[m
+[31m-Mcu.Pin19=PB6[m
+[32m+[m[32mMcu.Pin10=PA14[m
+[32m+[m[32mMcu.Pin11=PA15[m
+[32m+[m[32mMcu.Pin12=PB3[m
+[32m+[m[32mMcu.Pin13=PB4[m
+[32m+[m[32mMcu.Pin14=PB5[m
+[32m+[m[32mMcu.Pin15=PB6[m
+[32m+[m[32mMcu.Pin16=PB7[m
+[32m+[m[32mMcu.Pin17=VP_FREERTOS_VS_ENABLE[m
+[32m+[m[32mMcu.Pin18=VP_RTC_VS_RTC_Activate[m
+[32m+[m[32mMcu.Pin19=VP_RTC_VS_RTC_Calendar[m
+ Mcu.Pin2=PA2[m
+[31m-Mcu.Pin20=PB7[m
+[31m-Mcu.Pin21=VP_FREERTOS_VS_ENABLE[m
+[31m-Mcu.Pin22=VP_RTC_VS_RTC_Activate[m
+[31m-Mcu.Pin23=VP_RTC_VS_RTC_Calendar[m
+[31m-Mcu.Pin24=VP_RTC_VS_RTC_Alarm_A_Intern[m
+[31m-Mcu.Pin25=VP_SYS_VS_Systick[m
+[32m+[m[32mMcu.Pin20=VP_RTC_VS_RTC_Alarm_A_Intern[m
+[32m+[m[32mMcu.Pin21=VP_SYS_VS_Systick[m
+ Mcu.Pin3=PA3[m
+[31m-Mcu.Pin4=PA4[m
+[31m-Mcu.Pin5=PA5[m
+[31m-Mcu.Pin6=PA6[m
+[31m-Mcu.Pin7=PA7[m
+[31m-Mcu.Pin8=PB0[m
+[31m-Mcu.Pin9=PB1[m
+[31m-Mcu.PinsNb=26[m
+[32m+[m[32mMcu.Pin4=PB0[m
+[32m+[m[32mMcu.Pin5=PB1[m
+[32m+[m[32mMcu.Pin6=PA8[m
+[32m+[m[32mMcu.Pin7=PA9[m
+[32m+[m[32mMcu.Pin8=PA10[m
+[32m+[m[32mMcu.Pin9=PA12[m
+[32m+[m[32mMcu.PinsNb=22[m
+ Mcu.UserConstants=[m
+ Mcu.UserName=STM32L051K8Tx[m
+ MxCube.Version=4.23.0[m
+[36m@@ -76,14 +71,6 @@[m [mPA2.Mode=IN2[m
+ PA2.Signal=ADC_IN2[m
+ PA3.Mode=IN3[m
+ PA3.Signal=ADC_IN3[m
+[31m-PA4.Mode=NSS_Signal_Hard_Output[m
+[31m-PA4.Signal=SPI1_NSS[m
+[31m-PA5.Mode=Full_Duplex_Master[m
+[31m-PA5.Signal=SPI1_SCK[m
+[31m-PA6.Mode=Full_Duplex_Master[m
+[31m-PA6.Signal=SPI1_MISO[m
+[31m-PA7.Mode=Full_Duplex_Master[m
+[31m-PA7.Signal=SPI1_MOSI[m
+ PA8.GPIOParameters=GPIO_Label[m
+ PA8.GPIO_Label=ESP_WAKE[m
+ PA8.Locked=true[m
+[36m@@ -168,12 +155,6 @@[m [mSH.GPXTI5.ConfNb=1[m
+ SH.SharedStack_PA14.0=SYS_SWCLK[m
+ SH.SharedStack_PA14.1=USART2_TX,Asynchronous[m
+ SH.SharedStack_PA14.ConfNb=2[m
+[31m-SPI1.CalculateBaudRate=8.0 MBits/s[m
+[31m-SPI1.Direction=SPI_DIRECTION_2LINES[m
+[31m-SPI1.IPParameters=VirtualType,Mode,Direction,CalculateBaudRate,VirtualNSS[m
+[31m-SPI1.Mode=SPI_MODE_MASTER[m
+[31m-SPI1.VirtualNSS=VM_NSSHARD[m
+[31m-SPI1.VirtualType=VM_MASTER[m
+ USART1.IPParameters=VirtualMode-Asynchronous[m
+ USART1.VirtualMode-Asynchronous=VM_ASYNC[m
+ USART2.IPParameters=VirtualMode-Asynchronous[m

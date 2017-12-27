@@ -112,8 +112,6 @@ Wire Wire Line
 	3000 2500 3000 2900
 Wire Wire Line
 	4550 2600 4450 2600
-Wire Wire Line
-	4450 2050 4450 3550
 Connection ~ 4450 2200
 Wire Wire Line
 	5550 2800 8250 2800
@@ -308,7 +306,7 @@ Connection ~ 2700 3550
 Text HLabel 2800 3400 2    60   Output ~ 0
 VUSB
 Wire Wire Line
-	4450 2050 4600 2050
-Text HLabel 4600 2050 2    60   Output ~ 0
-VSYS
+	4450 2200 4450 3550
+Text Notes 8000 2100 0    60   ~ 0
+3.0V Regulated
 $EndSCHEMATC
